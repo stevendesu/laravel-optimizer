@@ -1,0 +1,22 @@
+{
+    "name": "stevendesu/optimizer",
+    "description": "A Laravel 5 package which utilizes multiple open source libraries to optimize web assets.",
+    "keywords": ["laravel", "laravel 5", "optimize", "compress", "image", "javascript", "css"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steven Barnett",
+            "email": "steven.abarnett@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Stevendesu\\Optimizer\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

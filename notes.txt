@@ -1,0 +1,11 @@
+	1. Need to make sure the bin folder recursively has execute permissions for the web server
+	2. Required libraries to install from source:
+		-   gcc
+		-   SSE? (maybe)
+		-   libpng-dev
+			ldconfig -p | grep "libpng" (12.so? otherNumber.so?)
+		-   zlib
+			ldconfig -p | grep "libz" (.so?)
+	3. Only need to call "make" -- this compiles the script... "make install" copies it to a global directory
+	4. Future enhancement: Instead of just failing if the required libraries are missing, just
+		include all libraries we need in the /src directory so we don't need to use shared libraries
