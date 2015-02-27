@@ -84,6 +84,8 @@ class Optimizer {
 					// Error?
 			}
 		}
+		
+		return $this; // So that we can do things like $this->optimize()->save()
 	}
 	
 	/**
