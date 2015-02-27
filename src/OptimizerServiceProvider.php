@@ -34,7 +34,7 @@ class OptimizerServiceProvider extends ServiceProvider {
 		// Register providers.
 		$this->app['optimizer'] = $this->app->share(function($app)
 		{
-			return new WorldDistance($app['config']);
+			return new Optimizer($app['config']);
 		});
 	}
 
