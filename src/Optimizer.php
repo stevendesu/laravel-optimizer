@@ -87,6 +87,25 @@ class Optimizer {
 	}
 	
 	/**
+	 * 
+	 */
+	public function save($file = '') {
+		if( empty( $this->tmpFile ) ) {
+			// Error ?
+		}
+		
+		if( empty($file) ) {
+			$file = $this->originalFile;
+		} else {
+			$file = realpath($file);
+		}
+		
+		rename( $this->tmpFile, $file );
+		
+		$this->tmpFile = '';
+	}
+	
+	/**
 	 * Optimize the file?
 	 *
 	 * @param  NONE
