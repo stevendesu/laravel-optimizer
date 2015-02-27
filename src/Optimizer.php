@@ -104,7 +104,7 @@ class Optimizer {
 			$parameters .= ' --nofs ' . $this->config->get('optimizer.pngquant.nofs');
 		$parameters .= ' --posterize ' . $this->config->get('optimizer.pngquant.posterize');
 		
-		exec( $this->pngquant . $parameters . ' ' . $this->originalFile );
+		exec( $this->pngquant . $parameters . ' ' . $this->originalFile, $output, $retVal );
 		
 		// ... Then to optiPNG?
 		
@@ -120,6 +120,12 @@ class Optimizer {
 	 * @return  String
 	 */
 	private function generateTmpFileName() {
+		if( ! file_exists( storage_path() . '/' . $this->config->get('optimizer.tmpFile.folder') ) ) {
+			mkdir( storage_path() . '/' . $this->config->get('optimizer.tmpFile.folder'), 0755, true );
+		} else if( ! is_dir( storage_path() . '/' . $this->config->get('optimizer.tmpFile.folder') ) ) {
+			// Error ?
+		}
+		
 		$tmpFile = substr(
 			str_shuffle(
 				str_repeat(
