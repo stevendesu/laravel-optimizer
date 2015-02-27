@@ -98,8 +98,6 @@ class Optimizer {
 		
 		if( empty($file) ) {
 			$file = $this->originalFile;
-		} else {
-			$file = realpath($file);
 		}
 		
 		rename( $this->tmpFile, $file );
