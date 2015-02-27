@@ -56,7 +56,7 @@ class Optimizer {
 		$binDir = dirname(dirname(__FILE__)) . '/bin/' . $os_platform;
 		
 		$this->pngquant = $binDir . 'pngquant/pngquant' . $ext;
-		$this->optipng = $binDr . 'optipng/optipng' . $ext;
+		$this->optipng = $binDir . 'optipng/optipng' . $ext;
 	}
 	
 	/**
