@@ -44,8 +44,6 @@ class Optimizer {
 	public function __construct(Repository $config) {
 		$this->config = $config;
 		
-		$binDir = dirname(dirname(__FILE__)) . '/bin/';
-		
 		$os_platform = 'linux/';
 		$ext = '';
 		if( substr(PHP_OS, 0, 3) == 'win' ) {
@@ -55,8 +53,10 @@ class Optimizer {
 			$os_platform = 'mac/';
 		}
 		
-		$this->pngquant = $binDir . $os_platform . 'pngquant/pngquant' . $ext;
-		$this->optipng = $binDr . $os_platofrm . 'optipng/optipng' . $ext;
+		$binDir = dirname(dirname(__FILE__)) . '/bin/' . $os_platform;
+		
+		$this->pngquant = $binDir . 'pngquant/pngquant' . $ext;
+		$this->optipng = $binDr . 'optipng/optipng' . $ext;
 	}
 	
 	/**
